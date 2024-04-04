@@ -1,12 +1,19 @@
-import "./App.css";
+import React from "react";
 import AllTagsTable from "./components/tagList";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-function App() {
+const darkTheme = createTheme({
+	palette: {
+		mode: "dark",
+	},
+});
+
+const App = () => {
 	return (
-		<div className="App">
+		<ThemeProvider theme={darkTheme}>
 			<AllTagsTable />
-		</div>
+		</ThemeProvider>
 	);
-}
+};
 
 export default App;
